@@ -1,0 +1,9 @@
+- hosts: server
+  task:
+     - name: rubah content file apabila redhat
+       copy:
+          content: "saya adalah server dengan OS CentOS dengan versi 7.5"
+          dest: /etc/motd
+       when:
+          - ansible_distribution == "CentOS"
+          - ansible_distribution_release_version == "7.5"
