@@ -1,0 +1,17 @@
+---
+
+- hosts: server
+  tasks:
+        - name: create user
+          user:
+               name: jono
+               password: 1
+        - name: create folder /tmp/idnmantab
+          file:
+               path: /tmp/idnmantab
+               state: directory
+               owner: jono
+               group: root
+        - yum:
+              name: postfix
+              state: present

@@ -1,0 +1,7 @@
+---
+- hosts: server
+  tasks:
+        - name: Create Multiple User
+          user:
+               user: "{{ user }}"
+               password: "{{ pass }}"

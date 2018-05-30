@@ -1,0 +1,11 @@
+- hosts: server
+  tasks:
+       - include_vars:
+            file: vars.yml
+            name: ex 
+       - name: Install Packet
+         yum:
+            name: "{{ item }}"
+            state: installed
+         with_items:
+            - "{{ ex.paket }}"

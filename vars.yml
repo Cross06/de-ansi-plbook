@@ -1,0 +1,10 @@
+paket:
+    - httpd
+    - postfix
+    - chrony
+    - named
+
+user:
+   - jono
+   - mono
+   - jomblo

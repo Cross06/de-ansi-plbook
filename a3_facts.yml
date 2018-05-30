@@ -1,0 +1,12 @@
+---
+- hosts: server
+  tasks:
+       - debug:
+             msg: >
+                Ini adalah server dengan OS {{ ansible_distribution }} dengan versi {{ ansible_distribution_version }}
+       - name: Install using yum if OS is Redhat family
+         yum:
+             name: httpd
+             state: installed
+         when:
+             - ansible_distribution == "CentOS"
