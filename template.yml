@@ -1,0 +1,9 @@
+---
+- hosts: server
+  tasks:
+     - name: Ansible Jinja2
+       debug:
+         msg: >
+          {% if ansible_distribution == "CentOS" -%}
+          PC ini mempunyai OS CentOS
+          {% endif %}
