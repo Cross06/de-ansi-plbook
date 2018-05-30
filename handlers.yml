@@ -1,0 +1,13 @@
+- hosts: server
+  tasks:
+     - name: Change default Web Page
+       copy:
+          content: "<html><body>hellow Bray</body></html>"
+          dest: /var/www/html/index.html
+       notify:
+          - restart_httpd
+  handlers:
+     - name: restart_httpd
+       service:
+          name: httpd
+          state: restarted 
